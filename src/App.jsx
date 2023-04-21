@@ -445,10 +445,10 @@ const data = {
     },
     {
       id: "50",
-      position: {x: -100, y: -400},
+      position: {x: 0, y: -400},
       style: {width: 200, textAlign:"left"},
       data: {
-        label: <ol type={1}>{Object.values(SCREENS).map(
+        label: <ol type={"1"}>{Object.values(SCREENS).map(
           (val, i) =>
             <li
               key={i}>{val.name}
