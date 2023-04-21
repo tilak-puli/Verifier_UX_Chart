@@ -90,6 +90,17 @@ const SCREENS = {
   },
 };
 
+const SCREENS_LIST_NODE = <div>
+  <h3 style={{paddingLeft: "10px"}}>Screens and their types</h3>
+  <ol type={"1"}>{Object.values(SCREENS).map(
+    (val, i) =>
+      <li
+        key={i}>{val.name}
+        <ul style={{listStyle: "disc"}}>{Object.values(val.type || {}).map((type, i) => <li key={i}>{type}</li>)}</ul>
+      </li>
+  )}</ol>
+</div>
+
 const data = {
   nodes: [
     {
@@ -446,15 +457,9 @@ const data = {
     {
       id: "50",
       position: {x: -200, y: 0},
-      style: {width: 200, textAlign:"left"},
+      style: {width: 250, textAlign: "left"},
       data: {
-        label: <ol type={"1"}>{Object.values(SCREENS).map(
-          (val, i) =>
-            <li
-              key={i}>{val.name}
-              <ul>{Object.values(val.type || {}).map((type, i) => <li key={i}>{type}</li>)}</ul>
-            </li>
-        )}</ol>,
+        label: SCREENS_LIST_NODE,
       },
     },
   ],
